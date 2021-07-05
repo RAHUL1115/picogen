@@ -39,6 +39,10 @@ or
 ``` bash
 $ picogen server
 ```
+- starting server with no auto reaload
+``` bash
+$ picogen server n
+```
 - generate (this will crete a new public folder with all the generated content);
 ``` bash
 $ picogen generate
