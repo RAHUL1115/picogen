@@ -15,29 +15,35 @@ picogen is a static site generator
 **Install picogen**
 
 ``` bash
-$ npm i picogen
+$ npm install -g picogen
 ```
 
-## setup
-- create index.js file.
-- Add this in your index.js file.
-``` javascript
-const pgen = require("picogen");
-pgen();
+## setup & use
+- create a project folder.
+``` bash
+$  mkdir new-project
 ``` 
-- iniatilze picogen (this will initaize and start the server)
+- enter into the project folder.
 ``` bash
-$ node index.js init
+$ cd new-project
+``` 
+- iniatilze picogen (this will initaize the starter files and start the server)
+``` bash
+$ picogen init
 ```
-- server
+- starting server (this will strat the server on a already created project)
 ``` bash
-$ node index.js
+$ picogen
 ```
-- generate
+or
 ``` bash
-$ node index.js generate
+$ picogen server
+```
+- generate (this will crete a new public folder with all the generated content);
+``` bash
+$ picogen generate
 ```
 - clean (removes db.json and public/)
 ``` bash
-$ node index.js clean
+$ picogen clean
 ```
