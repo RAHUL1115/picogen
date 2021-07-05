@@ -1,10 +1,13 @@
 {
   "name": "picogen",
   "version": "1.0.0",
-  "description": "",
+  "description": "## What is this",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "node index.js init",
+    "server": "node index.js",
+    "generate": "node index.js generate",
+    "clean": "node index.js clean"
   },
   "dependencies": {
     "ejs": "^3.1.6",
@@ -19,6 +22,15 @@
     "static site generator",
     "ejs"
   ],
-  "author": "",
-  "license": "ISC"
+  "author": "Rahul gupta",
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAHUL1115/picogen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RAHUL1115/picogen/issues"
+  },
+  "homepage": "https://github.com/RAHUL1115/picogen#readme"
 }

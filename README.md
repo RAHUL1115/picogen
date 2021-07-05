@@ -37,3 +37,7 @@ $ node index.js
 ``` bash
 $ node index.js generate
 ```
+- clean (removes db.json and public/)
+``` bash
+$ node index.js clean
+```
