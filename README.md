@@ -12,7 +12,7 @@ picogen is a static site generator
 
 ## instalation
 
-**Install Stag**
+**Install picogen**
 
 ``` bash
 $ npm i picogen
@@ -25,7 +25,7 @@ $ npm i picogen
 const pgen = require("picogen");
 pgen();
 ``` 
-- iniatilze stag (this will initaize and start the server)
+- iniatilze picogen (this will initaize and start the server)
 ``` bash
 $ node index.js init
 ```
