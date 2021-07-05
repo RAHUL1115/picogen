@@ -373,7 +373,7 @@ let fileWatcher = () => {
   });
 }
 
-var stag = function () {
+var pgen = function () {
   if (process.argv[2] == "clean") {
     clean();
   } else if (process.argv[2] == "init") {
@@ -395,5 +395,4 @@ var stag = function () {
 
 };
 
-// stag();
-module.exports = stag;
+module.exports = pgen;
