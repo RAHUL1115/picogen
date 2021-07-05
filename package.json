@@ -1,0 +1,24 @@
+{
+  "name": "picogen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "gray-matter": "^4.0.3",
+    "node-watch": "^0.7.1",
+    "path": "^0.12.7",
+    "simple-json-db": "^1.2.3"
+  },
+  "keywords": [
+    "picogen",
+    "static site generator",
+    "ejs"
+  ],
+  "author": "",
+  "license": "ISC"
+}
