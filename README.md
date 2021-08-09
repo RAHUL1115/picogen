@@ -1,4 +1,4 @@
-# picogen
+# Picogen
 
 ## What is this
 
@@ -10,7 +10,7 @@ picogen is a static site generator
 - ejs support
 - live reload
 
-## instalation
+## Instalation
 
 **Install picogen**
 
@@ -18,7 +18,7 @@ picogen is a static site generator
 $ npm install -g picogen
 ```
 
-## setup & use
+## Setup
 - create a project folder.
 ``` bash
 $  mkdir new-project
@@ -27,7 +27,9 @@ $  mkdir new-project
 ``` bash
 $ cd new-project
 ``` 
-- iniatilze picogen (this will initaize the starter files and start the server)
+
+## Use
+- iniatilze picogen (this will initaize the starter files)
 ``` bash
 $ picogen init
 ```
@@ -46,6 +48,10 @@ $ picogen server n
 - generate (this will crete a new public folder with all the generated content);
 ``` bash
 $ picogen generate
+```
+- generate files with sitemap (this will create a sitemap.xml in your public folder);
+``` bash
+$ picogen generate s
 ```
 - clean (removes db.json and public/)
 ``` bash
