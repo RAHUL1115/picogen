@@ -101,11 +101,25 @@ let readAllData = () => new Promise(async (res, rej) => {
 });
 
 let readAllPage = () => new Promise(async (res, rej) => {
+  // function
+  function deepfinder(fileData){
+    let filepath = (fileData.fullname.replace(allPaths.page, "").replace(path.extname(fileData.name), '') + ".html").split('/');
+    filepath = filepath.map((splitpath, index) => {
+      if (index == 0 || index == 1) {
+        return "";
+      }else{
+        return "../";
+      }
+    });
+    return filepath.join('');
+  }
+
   // process page data
   function processPageData(data, stat, fileData) {
     return {
       "data": matter(data).data,
       "path": fileData.fullname.replace(allPaths.page, "").replace(path.extname(fileData.name), '') + ".html",
+      "srcfix": deepfinder(fileData),
       "name": path.basename(fileData.fullname.replace(allPaths.page, "").replace(path.extname(fileData.name), '') + ".html"),
       "cretaed": stat.birthtime,
       "modified": stat.ctime,
