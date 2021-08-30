@@ -109,7 +109,7 @@ let readAllPage = () => new Promise(async (res, rej) => {
       "name": path.basename(fileData.fullname.replace(allPaths.page, "").replace(path.extname(fileData.name), '') + ".html"),
       "cretaed": stat.birthtime,
       "modified": stat.ctime,
-      "content": matter(data).content.replace(/((<%-|<%=).+include\()(("|'|`).+)(("|'|`).*\).+%>)/g, '$1_path+$3$5'),
+      "content": matter(data).content.replace(/((<%-).+include\()/g,'$1_path+'),
     }
   }
 
@@ -150,7 +150,7 @@ let readAllPage = () => new Promise(async (res, rej) => {
 let readAllLayout = () => new Promise(async (res, rej) => {
   // add include prefix and return modified content
   function processLayoutData(data) {
-    return data.replace(/((<%-|<%=).+include\()(("|'|`).+)(("|'|`).*\).+%>)/g, '$1_path+$3$5');
+    return data.replace(/((<%-).+include\()/g,'$1_path+');
   }
 
   // return file name
@@ -186,7 +186,7 @@ let readAllLayout = () => new Promise(async (res, rej) => {
 let readTemplate = () => new Promise(async (res, rej) => {
   // add include prefix and return modified content
   function processTemplateData(data) {
-    return data.replace(/((<%-|<%=).+include\()(("|'|`).+)(("|'|`).*\).+%>)/g, '$1_path+$3$5');
+    return data.replace(/((<%-).+include\()/g,'$1_path+');
   }
 
   // read and save the content in database
@@ -448,4 +448,4 @@ let picogen2 = () => {
   }
 }
 
-module.exports = picogen2;
+picogen2();
