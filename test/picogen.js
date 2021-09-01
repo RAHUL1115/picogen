@@ -11,19 +11,19 @@ const watch = require("node-watch");
 
 // ! variables
 var allPaths = {
-  data: path.join(path.resolve(), "src/_data").split("\\").join("/"),
+  data: path.join(path.resolve(), "src/_data").replace(/\\/g,"/"),
   component: path.join(path.resolve(), "src/_component") + "\\",
-  layout: path.join(path.resolve(), "src/_template/layout").split("\\").join("/"),
-  static: path.join(path.resolve(), "src/_static").split("\\").join("/"),
-  page: path.join(path.resolve(), "src/pages").split("\\").join("/"),
-  template: path.join(path.resolve(), "src/_template/main.ejs").split("\\").join("/"),
-  dbpath: path.join(path.resolve(), "src/db.json").split("\\").join("/"),
-  public: path.join(path.resolve(), "public").split("\\").join("/"),
-  temp: path.join(path.resolve(), "src/.temp").split("\\").join("/"),
-  src: path.join(path.resolve(), "src").split("\\").join("/"),
-  srcGlobal: path.join(__dirname, "../src").split("\\").join("/"),
-  sitemap: path.join(path.resolve(), "public/sitemap.xml").split("\\").join("/"),
-  feed: path.join(path.resolve(), "src").split("\\").join("/"),
+  layout: path.join(path.resolve(), "src/_template/layout").replace(/\\/g,"/"),
+  static: path.join(path.resolve(), "src/_static").replace(/\\/g,"/"),
+  page: path.join(path.resolve(), "src/pages").replace(/\\/g,"/"),
+  template: path.join(path.resolve(), "src/_template/main.ejs").replace(/\\/g,"/"),
+  dbpath: path.join(path.resolve(), "src/db.json").replace(/\\/g,"/"),
+  public: path.join(path.resolve(), "public").replace(/\\/g,"/"),
+  temp: path.join(path.resolve(), "src/.temp").replace(/\\/g,"/"),
+  src: path.join(path.resolve(), "src").replace(/\\/g,"/"),
+  srcGlobal: path.join(__dirname, "../src").replace(/\\/g,"/"),
+  sitemap: path.join(path.resolve(), "public/sitemap.xml").replace(/\\/g,"/"),
+  feed: path.join(path.resolve(), "src").replace(/\\/g,"/"),
 }
 let app;
 let server;
@@ -253,7 +253,7 @@ let processPages = (site, page) => {
     let modifiedPage = JSON.parse(JSON.stringify(page));
     modifiedPage.content = undefined;
     page.content = ejs.render(page.content.trim(), {
-      pagedata: modifiedPage,
+      page: modifiedPage,
       site: {
         data: site.data,
         pages: modifiedPages,
@@ -438,6 +438,27 @@ let generateHaneler = ()=>{
   });
 }
 
+// ? file creator
+let create = (data) => {
+  if (data.data && data.template && data.output || data.outputName) {
+    let dataFile = path.join(path.resolve(), data.data);
+    let templateFile = path.join(path.resolve(), data.template);
+    let outputPath = path.join(path.resolve(), data.output);
+    // let outputFile = path.join(outputPath, data.outputName);
+    Promise.all([
+      fs.readFile(dataFile, 'utf8'),
+      fs.readFile(templateFile, 'utf8'),
+      fs.mkdir(data.output, {recursive: true}).catch()
+    ]).then(output => {
+      let data = eval(output[0]);
+      console.log(data);
+      // fs.writeFile(outputFile).then(output => {}).catch(err => {});
+    }).catch(err => {
+      console.log(err);
+    });
+  }
+}
+
 // ! main
 let picogen2 = () => {
   switch (process.argv[2]) {
@@ -458,6 +479,14 @@ let picogen2 = () => {
       break;
     case "clean":
       clean();
+      break;
+    case "create":
+      create({
+        data : process.argv[3], 
+        template : process.argv[4], 
+        output: process.argv[5],
+        outputName: process.argv[6],
+      });
       break;
     default:
       console.log("Invalid Option");
