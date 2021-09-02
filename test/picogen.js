@@ -23,7 +23,8 @@ var allPaths = {
   src: path.join(path.resolve(), "src").replace(/\\/g,"/"),
   srcGlobal: path.join(__dirname, "../src").replace(/\\/g,"/"),
   sitemap: path.join(path.resolve(), "public/sitemap.xml").replace(/\\/g,"/"),
-  feed: path.join(path.resolve(), "src").replace(/\\/g,"/"),
+  feed: path.join(path.resolve(), "src/feed.xml").replace(/\\/g, "/"),
+  pagegen: path.join(path.resolve(), "src/_apagegen").replace(/\\/g, "/"),
 }
 let app;
 let server;
@@ -118,11 +119,11 @@ let readAllPage = () => new Promise(async (res, rej) => {
   function processPageData(data, stat, fileData) {
     return {
       "data": matter(data).data,
-      "path": fileData.fullname.replace(allPaths.page, "").replace(path.extname(fileData.name), '') + ".html",
-      "srcfix": deepfinder(fileData),
+      "fullpath": fileData.fullname.replace(allPaths.page, "").replace(path.extname(fileData.name), '') + ".html",
+      "path": path.dirname(fileData.fullname.replace(allPaths.page, "")),
       "name": path.basename(fileData.fullname.replace(allPaths.page, "").replace(path.extname(fileData.name), '') + ".html"),
-      "cretaed": stat.birthtime,
-      "modified": stat.ctime,
+      "created": matter(data).data.created || stat.birthtime,
+      "modified": matter(data).data.modified || stat.ctime,
       "content": matter(data).content.replace(/((<%-).+include\()/g,'$1_path+'),
     }
   }
@@ -440,21 +441,29 @@ let generateHaneler = ()=>{
 
 // ? file creator
 let create = (data) => {
-  if (data.data && data.template && data.output || data.outputName) {
-    let dataFile = path.join(path.resolve(), data.data);
-    let templateFile = path.join(path.resolve(), data.template);
-    let outputPath = path.join(path.resolve(), data.output);
-    // let outputFile = path.join(outputPath, data.outputName);
-    Promise.all([
-      fs.readFile(dataFile, 'utf8'),
-      fs.readFile(templateFile, 'utf8'),
-      fs.mkdir(data.output, {recursive: true}).catch()
-    ]).then(output => {
-      let data = eval(output[0]);
-      console.log(data);
-      // fs.writeFile(outputFile).then(output => {}).catch(err => {});
+  if (data.data) {
+    let datafile = path.join(allPaths.data, data.data+".json");
+    let programFile = path.join(allPaths.pagegen, data.program || 'index.js');
+    let templateFile = path.join(allPaths.pagegen, data.template || 'template.ejs');
+    let outputPath = path.join(allPaths.src, data.output || '');
+    
+    fs.readFile(datafile, 'utf8').then((outputdata) => {
+      outputdata = JSON.parse(outputdata);
+      fs.readFile(programFile, 'utf8').then((outputProgram) => {
+         fs.readFile(templateFile, 'utf8').then((outputTemplate) => {
+           try {
+             eval(outputProgram);
+           } catch (error) {
+             console.log(error);
+           }
+         }).catch(err => {
+           console.log("no file found 1");
+         });
+      }).catch(err => {
+        console.log("no file found 2");
+      });
     }).catch(err => {
-      console.log(err);
+      console.log("no file found 3");
     });
   }
 }
@@ -482,10 +491,10 @@ let picogen2 = () => {
       break;
     case "create":
       create({
-        data : process.argv[3], 
-        template : process.argv[4], 
-        output: process.argv[5],
-        outputName: process.argv[6],
+        data: process.argv[3],
+        output: process.argv[4],
+        program: process.argv[5],
+        template: process.argv[6],
       });
       break;
     default:

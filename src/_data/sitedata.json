@@ -1,3 +1,11 @@
 {
-  "websiteurl": "https://examle.com"
+  "websiteurl": "https://examle.com",
+  "testArray": [
+    {
+      "name": "test.ejs"
+    },
+    {
+      "name": "test2.ejs"
+    }
+  ]
 }
