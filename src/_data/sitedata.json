@@ -1,5 +1,6 @@
 {
   "websiteurl": "https://examle.com",
+  "removehtmlext" : false,
   "testArray": [
     {
       "name": "test.ejs"
