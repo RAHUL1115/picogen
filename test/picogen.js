@@ -218,7 +218,6 @@ let readTemplate = () => new Promise(async (res, rej) => {
 
 // ? server related
 let createServer = (doNotLog) => {
-  console.log("working");
   app = new tinyApp();
   app.use((req, res, next) => {
     let result = req.url.match(/(.json|.ejs)/g)
@@ -404,8 +403,10 @@ let generate = async () => {
   }
   console.time("All files generated in ");
   site.pages.forEach(async (page) => {
-    dirs.push(fs.mkdir(path.dirname(path.join(allPaths.public, page.path))).catch(() => {}));
-    files.push(fs.writeFile(path.join(allPaths.public, page.path), processPages(site, page, port,true)).catch(() => {}));
+    // console.log(path.join(allPaths.public, page.fullpath));
+    dirs.push(fs.mkdir(path.dirname(path.join(allPaths.public, page.fullpath))).catch(() => {}));
+    files.push(fs.writeFile(path.join(allPaths.public, page.fullpath), 
+    processPages(site, page, port,true)).catch(() => {}));
   });
   await Promise.all(dirs).catch((error) => {});
   await Promise.all([
