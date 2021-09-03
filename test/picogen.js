@@ -218,6 +218,7 @@ let readTemplate = () => new Promise(async (res, rej) => {
 
 // ? server related
 let createServer = (doNotLog) => {
+  console.log("working");
   app = new tinyApp();
   app.use((req, res, next) => {
     let result = req.url.match(/(.json|.ejs)/g)
@@ -324,7 +325,11 @@ let updateServer = (preLoadedSite) => {
     }
     if((serverPath != "/index.html" || serverPath != "/index") && page.name == "index.html"){
       app.get(path.dirname(page.fullpath), (req, res) => {
-        res.send(processPages(site, page, port));
+        if(req._parsedUrl.pathname == path.dirname(page.fullpath)){
+          res.redirect(req._parsedUrl.pathname + '/');
+        }else{
+          res.send(processPages(site, page, port));
+        }
       });
     }
     app.get(serverPath, (req, res) => {
