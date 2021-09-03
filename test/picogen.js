@@ -317,7 +317,7 @@ let updateServer = (preLoadedSite) => {
     return !(route.type == "route") || (route.path == "/_reload");
   });
   site.pages.forEach((page) => {
-    let serverPath = (site?.data?.sitedata?.removehtmlext) ? page.basename :  page.fullpath;
+    let serverPath = (site?.data?.sitedata?.removehtmlext) ? ("/"+page.basename) :  page.fullpath;
     if (serverPath == "/index.html" || serverPath == "/index") {
       app.get("/", (req, res) => {
         res.send(processPages(site, page, port));
