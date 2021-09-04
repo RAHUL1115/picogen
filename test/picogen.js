@@ -26,6 +26,22 @@ var allPaths = {
   feed: path.join(path.resolve(), "src/feed.xml").replace(/\\/g, "/"),
   pagegen: path.join(path.resolve(), "src/_apagegen").replace(/\\/g, "/"),
 }
+
+var allFunc = {
+  getNchar: (str, n, max = 10) => {
+    let absN = 0;
+
+    for (var i = 0; i < max; i++) {
+      if (str[n + i] == ' ') {
+        absN = n + i;
+        return str.substring(0, absN);
+      }
+      absN = n + i;
+    }
+    return str.substring(0, absN);
+  },
+}
+
 let app;
 let server;
 let client;
@@ -262,7 +278,8 @@ let processPages = (site, page) => {
   try {
     let modifiedPage = JSON.parse(JSON.stringify(page));
     modifiedPage.content = undefined;
-    page.content = page.data?.renderInLayout ? page.content.trim() : ejs.render(page.content.trim(), {
+    page.content = page.data ? .renderInLayout ? page.content.trim() : ejs.render(page.content.trim(), {
+      getNchar: allFunc.getNchar,
       page: modifiedPage,
       site: {
         data: site.data,
@@ -276,9 +293,11 @@ let processPages = (site, page) => {
 
   // process layout
   try {
-    let pagelayout = page.data?.layout ? (site.layout[page.data.layout] | site.layout.default.trim()) : site.layout.default.trim();
+    let pagelayout = page.data ? .layout ?
+      (site.layout[page.data.layout] ? site.layout[page.data.layout] : site.layout.default.trim()) :
+      site.layout.default.trim();
     body = ejs.render(pagelayout, {
-      test : 'thisis thest data',
+      getNchar: allFunc.getNchar,
       page,
       site: {
         data: site.data,
@@ -286,8 +305,9 @@ let processPages = (site, page) => {
       },
       _path: allPaths.component,
     });
-    body = !(page.data?.renderInLayout) ? body : ejs.render(body, {
-      test: 'thisis thest data',
+
+    body = !(page.data ? .renderInLayout) ? body : ejs.render(body, {
+      getNchar: allFunc.getNchar,
       page,
       site: {
         data: site.data,
@@ -312,7 +332,7 @@ let processPages = (site, page) => {
 
   // render template
   return ejs.render(site.template.trim(), {
-    test: 'thisis thest data',
+    getNchar: allFunc.getNchar,
     body: body,
     page,
     site: {
@@ -329,7 +349,7 @@ let updateServer = (preLoadedSite) => {
     return !(route.type == "route") || (route.path == "/_reload");
   });
   site.pages.forEach((page) => {
-    let serverPath = (site?.data?.sitedata?.removehtmlext) ? ("/" + page.basename) : page.fullpath;
+    let serverPath = (site ? .data ? .sitedata ? .removehtmlext) ? ("/" + page.basename) : page.fullpath;
     if (serverPath == "/index.html" || serverPath == "/index") {
       app.get("/", (req, res) => {
         res.send(processPages(site, page, port));
@@ -391,7 +411,7 @@ let sitemapGen = (site) => new Promise((res, rej) => {
   generator.on('done', () => {
     let data = fs.readFileSync(allPaths.sitemap, "utf8");
     data = data.toString();
-    data = data.replace(new RegExp(`(http:\/\/localhost:${port})`, "g"), site.data?.sitedata?.websiteurl || '$1');
+    data = data.replace(new RegExp(`(http:\/\/localhost:${port})`, "g"), site.data ? .sitedata ? .websiteurl || '$1');
     fs.writeFileSync(allPaths.sitemap, data);
     console.timeEnd("sitemap generated in");
     res();
@@ -416,7 +436,7 @@ let generate = async () => {
   }
   console.time("All files generated in ");
   site.pages.forEach(async (page) => {
-    fullpath = site.data?.sitedata?.removehtmlextgen ? page.fullpath.replace('.html', '') : page.fullpath;
+    fullpath = site.data ? .sitedata ? .removehtmlextgen ? page.fullpath.replace('.html', '') : page.fullpath;
     dirs.push(fs.mkdir(path.dirname(path.join(allPaths.public, page.fullpath))).catch(() => {}));
     files.push(fs.writeFile(path.join(allPaths.public, fullpath),
       processPages(site, page, port, true)).catch(() => {}));
