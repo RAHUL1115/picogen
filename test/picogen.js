@@ -257,10 +257,12 @@ let processPages = (site, page) => {
     page.content = undefined;
     return page;
   });
+
+  // process pages
   try {
     let modifiedPage = JSON.parse(JSON.stringify(page));
     modifiedPage.content = undefined;
-    page.content = ejs.render(page.content.trim(), {
+    page.content = page.data?.renderInLayout ? page.content.trim() : ejs.render(page.content.trim(), {
       page: modifiedPage,
       site: {
         data: site.data,
@@ -271,8 +273,21 @@ let processPages = (site, page) => {
   } catch (err) {
     console.log(err);
   }
+
+  // process layout
   try {
-    body = ejs.render(site.layout[page.data.layout], {
+    let pagelayout = page.data?.layout ? (site.layout[page.data.layout] | site.layout.default.trim()) : site.layout.default.trim();
+    body = ejs.render(pagelayout, {
+      test : 'thisis thest data',
+      page,
+      site: {
+        data: site.data,
+        pages: site.pages,
+      },
+      _path: allPaths.component,
+    });
+    body = !(page.data?.renderInLayout) ? body : ejs.render(body, {
+      test: 'thisis thest data',
       page,
       site: {
         data: site.data,
@@ -281,19 +296,10 @@ let processPages = (site, page) => {
       _path: allPaths.component,
     });
   } catch (err) {
-    try {
-      body = ejs.render(site.layout.default.trim(), {
-        page,
-        site: {
-          data: site.data,
-          pages: site.pages,
-        },
-        _path: allPaths.component,
-      });
-    } catch (err) {
-      body = page.content;
-    }
+    body = page.content;
   }
+
+  // live reload code
   body = shouldRefresh ? body.concat(`
     <script>
       var evtSource = new EventSource("http://localhost:${port}/_reload");
@@ -302,16 +308,18 @@ let processPages = (site, page) => {
         location.reload();
       };
     </script>
-  `).trim() :
-    body;
+  `).trim() : body;
+
+  // render template
   return ejs.render(site.template.trim(), {
+    test: 'thisis thest data',
     body: body,
     page,
-    _path: allPaths.component,
     site: {
       data: site.data,
       pages: site.pages,
-    }
+    },
+    _path: allPaths.component
   });
 }
 
@@ -321,7 +329,7 @@ let updateServer = (preLoadedSite) => {
     return !(route.type == "route") || (route.path == "/_reload");
   });
   site.pages.forEach((page) => {
-    let serverPath = (site ? .data ? .sitedata ? .removehtmlext) ? ("/" + page.basename) : page.fullpath;
+    let serverPath = (site?.data?.sitedata?.removehtmlext) ? ("/" + page.basename) : page.fullpath;
     if (serverPath == "/index.html" || serverPath == "/index") {
       app.get("/", (req, res) => {
         res.send(processPages(site, page, port));
@@ -383,7 +391,7 @@ let sitemapGen = (site) => new Promise((res, rej) => {
   generator.on('done', () => {
     let data = fs.readFileSync(allPaths.sitemap, "utf8");
     data = data.toString();
-    data = data.replace(new RegExp(`(http:\/\/localhost:${port})`, "g"), site.data ? .sitedata ? .websiteurl || '$1');
+    data = data.replace(new RegExp(`(http:\/\/localhost:${port})`, "g"), site.data?.sitedata?.websiteurl || '$1');
     fs.writeFileSync(allPaths.sitemap, data);
     console.timeEnd("sitemap generated in");
     res();
@@ -408,7 +416,7 @@ let generate = async () => {
   }
   console.time("All files generated in ");
   site.pages.forEach(async (page) => {
-    fullpath = site.data ? .sitedata ? .removehtmlextgen ? page.fullpath.replace('.html', '') : page.fullpath;
+    fullpath = site.data?.sitedata?.removehtmlextgen ? page.fullpath.replace('.html', '') : page.fullpath;
     dirs.push(fs.mkdir(path.dirname(path.join(allPaths.public, page.fullpath))).catch(() => {}));
     files.push(fs.writeFile(path.join(allPaths.public, fullpath),
       processPages(site, page, port, true)).catch(() => {}));
