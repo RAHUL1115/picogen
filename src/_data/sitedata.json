@@ -1,6 +1,7 @@
 {
   "websiteurl": "https://examle.com",
   "removehtmlext" : true,
+  "removehtmlextgen": true,
   "testArray": [
     {
       "name": "test.ejs"
