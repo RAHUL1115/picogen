@@ -1,0 +1,62 @@
+<% let thispagelink = page.actualpath.replace('index.html','') %>
+
+<% if (page.data?.title) { %>
+<title><%- page.data.title %></title>
+<meta property="og:title" content="<%- page.data.title %>" />
+<% } %>
+
+<% if (page.data?.description) { %>
+<meta name="description" content="<%- page.data.description %>">
+<meta property="og:description" content="<%- page.data.description %>" />
+<% } %>
+
+<% if (page.data?.keywords) { %>
+<meta name="keywords" content="<%- page.data.keywords %>">
+<% } %>
+
+<% if(site.data?.sitedata?.sitename) { %>
+<meta property="og:site_name" content="<%- site.data.sitedata.sitename %>" />
+<% } %>
+
+<% if(thispagelink) { %>
+<meta property="og:url" content="<%- thispagelink %>" />
+<link rel="canonical" href="<%- thispagelink %>" />
+<link rel="alternate" hreflang="x-default" href="<%- thispagelink %>" />
+<% } %>
+
+<meta property="og:locale" content="en_US" />
+
+<% if(page.data?.image || site.data?.sitedata?.siteimage) { %>
+<% if(page.path == '/') { %>
+<meta property="og:image" content="<%- page.data.image ?  page.srcfix+page.data.image : site.data.sitedata.siteimage %>" />
+<% } else if (page.data?.image) { %>
+<meta property="og:image" content="<%- page.srcfix+page.data.image %>" />
+<% } %>
+<% } %>
+
+<% if(page.data?.schema) { %>
+<script type="application/ld+json">
+  < % -JSON.stringify(page.data.schema) % >
+</script>
+<% } %>
+
+<% try { if(tagid) {%>
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '<%- tagid %>');
+</script>
+<!-- End Google Tag Manager -->
+<% }} catch(e){}%>
