@@ -1,7 +1,8 @@
 {
   "websiteurl": "https://examle.com",
-  "removehtmlext" : false,
+  "removehtmlext": false,
   "removehtmlextgen": false,
+  "postPath": "blogs",
   "testArray": [
     {
       "name": "test.ejs"
@@ -9,5 +10,6 @@
     {
       "name": "test2.ejs"
     }
-  ]
+  ],
+  "feed":{}
 }

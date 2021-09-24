@@ -1,0 +1,5 @@
+{
+  "removehtmlext": true,
+  "removehtmlextgen": true,
+  "postPath": "blogs"
+}
