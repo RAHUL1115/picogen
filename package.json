@@ -7,10 +7,7 @@
     "picogen": "./bin/index.js"
   },
   "scripts": {
-    "init": "node bin/index.js init",
-    "server": "node bin/index.js",
-    "generate": "node bin/index.js generate",
-    "clean": "node bin/index.js clean"
+    "dev": "postcss ./style.css -o ./src/_static/css/tailwind.min.css"
   },
   "dependencies": {
     "@tinyhttp/app": "^1.3.11",
@@ -32,7 +29,11 @@
   ],
   "author": "Rahul gupta",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.3.6",
+    "postcss-cli": "^9.0.1",
+    "tailwindcss": "^2.2.16"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RAHUL1115/picogen.git"
