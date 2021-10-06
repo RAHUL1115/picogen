@@ -1,0 +1,24 @@
+---
+{
+title: 'picogen',
+layout : 'docslayout'
+}
+---
+<div>
+  <h2 class="text-4xl mb-8">Page Settings</h2>
+
+  <p class="mb-5">you can modify settings in ./src/_data/sitedata.json</p>
+
+  <table class="border">
+    <tr>
+      <td class="p-2 px-3 font-bold capitalize">functions</td>
+      <td class="p-2 px-3 pl-5 font-bold capitalize">description</td>
+    </tr>
+    <% site.data.info.functions.forEach(data => { %>
+    <tr>
+      <td class="p-2 px-3"><%- data.functions %></td>
+      <td class="p-2 px-3 pl-5"><%- data.description %></td>
+    </tr>
+    <% }); %>
+  </table>
+</div>
