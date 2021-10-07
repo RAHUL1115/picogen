@@ -4,8 +4,29 @@ title: 'picogen',
 layout : 'docslayout'
 }
 ---
-<div>
+<section class="space-y-8">
   <h2 class="text-4xl">Commands</h2>
 
-  <p>you can modify settings in ./src/_data/sitedata.json</p>
-</div>
+  <section class="space-y-5">
+    <h2 class="text-xl">Initialization</h2>
+    <p><code>$ picogen init</code></p>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Generate</h2>
+    <p><code>$ picogen generate</code></p>
+    <p>Generates static files.</p>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Server</h2>
+    <p><code>$ picogen server</code></p>
+    <p>Starts the server.</p>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Clean</h2>
+    <p><code>$ picogen clean</code></p>
+    <p>Cleans the cache file (db.json) and generated files (public).</p>
+  </section>
+</section>

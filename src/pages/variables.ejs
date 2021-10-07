@@ -4,51 +4,56 @@ title: 'picogen',
 layout : 'docslayout'
 }
 ---
-<div>
-  <h2 class="text-4xl mb-8">Variables</h2>
+<section class="space-y-8">
+  <h2 class="text-4xl">Variables</h2>
 
-  <p class="mb-5">Gloabl Variables</p>
+  <section class="space-y-6">
+    <section class="space-y-4">
+      <p>Gloabl Variables</p>
+      <table class="border">
+        <tr>
+          <td class="p-2 px-3 font-bold capitalize">settings</td>
+          <td class="p-2 px-3 pl-5 font-bold capitalize">description</td>
+        </tr>
+        <% site.data.info.variables.global.forEach(data => { %>
+        <tr>
+          <td class="p-2 px-3"><%- data.settings %></td>
+          <td class="p-2 px-3 pl-5"><%- data.description %></td>
+        </tr>
+        <% }); %>
+      </table>
+    </section>
 
-  <table class="border">
-    <tr>
-      <td class="p-2 px-3 font-bold capitalize">settings</td>
-      <td class="p-2 px-3 pl-5 font-bold capitalize">description</td>
-    </tr>
-    <% site.data.info.variables.global.forEach(data => { %>
-      <tr>
-        <td class="p-2 px-3"><%- data.settings %></td>
-        <td class="p-2 px-3 pl-5"><%- data.description %></td>
-      </tr>
-    <% }); %>
-  </table>
+    <section class="space-y-4">
+      <p>Site Variables</p>
+      <table class="border">
+        <tr>
+          <td class="p-2 px-3 font-bold">settings</td>
+          <td class="p-2 px-3 pl-5 font-bold">description</td>
+        </tr>
+        <% site.data.info.variables.site.forEach(data => { %>
+        <tr>
+          <td class="p-2 px-3"><%- data.settings %></td>
+          <td class="p-2 px-3 pl-5"><%- data.description %></td>
+        </tr>
+        <% }); %>
+      </table>
+    </section>
 
-  <p class="my-5">Site Variables</p>
-
-  <table class="border">
-    <tr>
-      <td class="p-2 px-3 font-bold">settings</td>
-      <td class="p-2 px-3 pl-5 font-bold">description</td>
-    </tr>
-    <% site.data.info.variables.site.forEach(data => { %>
-      <tr>
-        <td class="p-2 px-3"><%- data.settings %></td>
-        <td class="p-2 px-3 pl-5"><%- data.description %></td>
-      </tr>
-    <% }); %>
-  </table>
-
-  <p class="my-5">Page Variables</p>
-
-  <table class="border">
-    <tr>
-      <td class="p-2 px-3 font-bold">settings</td>
-      <td class="p-2 px-3 pl-5 font-bold">description</td>
-    </tr>
-    <% site.data.info.variables.page.forEach(data => { %>
-      <tr>
-        <td class="p-2 px-3"><%- data.settings %></td>
-        <td class="p-2 px-3 pl-5"><%- data.description %></td>
-      </tr>
-    <% }); %>
-  </table>
-</div>
+    <section class="space-y-4">
+      <p>Page Variables</p>
+      <table class="border">
+        <tr>
+          <td class="p-2 px-3 font-bold">settings</td>
+          <td class="p-2 px-3 pl-5 font-bold">description</td>
+        </tr>
+        <% site.data.info.variables.page.forEach(data => { %>
+        <tr>
+          <td class="p-2 px-3"><%- data.settings %></td>
+          <td class="p-2 px-3 pl-5"><%- data.description %></td>
+        </tr>
+        <% }); %>
+      </table>
+    </section>
+  </section>
+</section>
