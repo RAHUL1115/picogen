@@ -6,14 +6,44 @@
       "type": "String"
     },
     {
+      "settings": "title",
+      "description": "title of your site.",
+      "type": "String"
+    },
+    {
+      "settings": "description",
+      "description": "description of your site",
+      "type": "String"
+    },
+    {
+      "settings": "copyright",
+      "description": "copyright info of your site",
+      "type": "String"
+    },
+    {
+      "settings": "image",
+      "description": "image of your website",
+      "type": "String"
+    },
+    {
+      "settings": "favicon",
+      "description": "favicon of your website",
+      "type": "String"
+    },
+    {
       "settings": "removehtmlext",
       "description": "Whether to remove the .html extension or not from server and sitemap.",
-      "type": "bool"
+      "type": "Bool"
     },
     {
       "settings": "removehtmlextgen",
       "description": "Whether to remove the .html extension or not from generated files.",
-      "type": "bool"
+      "type": "Bool"
+    },
+    {
+      "settings": "postPath",
+      "description": "path of posts.",
+      "type": "String"
     }
   ],
   "pageSetting": [
@@ -38,8 +68,8 @@
       "type": "Bool"
     }
   ],
-  "variables":{
-    "global":[
+  "variables": {
+    "global": [
       {
         "settings": "site",
         "description": "Sitewide information."
@@ -53,7 +83,7 @@
         "description": "Path of the project directory. (Note: this will be appended to each “include” ejs function in your ejs page or template)"
       }
     ],
-    "site":[
+    "site": [
       {
         "settings": "site.pages",
         "description": "json Array of page variables for each page. (Note: can only be accessible in template and layout file and in component file if included by template or layout)."
@@ -63,7 +93,7 @@
         "description": "Json data from all the json files in the “src/_data” folder. Eg.(“site.data.sitedata”  this will return the json data from “src/_data/sitedata.sjon”)"
       }
     ],
-    "page":[
+    "page": [
       {
         "settings": "page.data",
         "description": "Page specific custom variables set in gray-matter. Eg.(page.data.title)."
@@ -102,7 +132,7 @@
       }
     ]
   },
-  "functions":[
+  "functions": [
     {
       "functions": "getNchar(str,n,max)",
       "description": "returns the peagraph in the range form \"n\" to \"max\" from string \"str\"."

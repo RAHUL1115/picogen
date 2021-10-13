@@ -1,5 +1,10 @@
 {
   "websiteurl": "https://examle.com",
+  "title": "dummy title",
+  "description": "dummy title",
+  "copyright": "dummy title",
+  "image": "dummy title",
+  "favicon": "dummy title",
   "removehtmlext": false,
   "removehtmlextgen": false,
   "postPath": "blogs",
@@ -10,6 +15,5 @@
     {
       "name": "test2.ejs"
     }
-  ],
-  "feed":{}
+  ]
 }
