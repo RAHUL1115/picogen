@@ -1,16 +1,16 @@
 {
   "name": "picogen",
-  "version": "2.1.021",
+  "version": "2.1.03",
   "description": "Static site generator",
   "main": "./lib/index.js",
   "bin": {
     "picogen": "./bin/index.js"
   },
   "scripts": {
-    "dev": "postcss ./style.css -o ./src/_static/css/tailwind.min.css"
+    "tailwindcss": "tailwindcss -i ./src/_static/css/input.css -o ./src/_static/css/tailwind.css"
   },
   "dependencies": {
-    "@tinyhttp/app": "^1.3.11",
+    "@tinyhttp/app": "^1.3.15",
     "arg": "^5.0.1",
     "ejs": "^3.1.6",
     "feed": "^4.2.2",
@@ -30,9 +30,11 @@
   "author": "Rahul gupta",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.3.6",
-    "postcss-cli": "^9.0.1",
-    "tailwindcss": "^2.2.16"
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2",
+    "tailwindcss": "^3.0.8"
   },
   "repository": {
     "type": "git",
