@@ -1,19 +1,11 @@
 {
   "websiteurl": "https://examle.com",
   "title": "dummy title",
-  "description": "dummy title",
-  "copyright": "dummy title",
-  "image": "dummy title",
-  "favicon": "dummy title",
+  "description": "dummy description",
+  "copyright": "dummy copyright",
+  "image": "image.jpg",
+  "favicon": "favicon.ico",
   "removehtmlext": false,
   "removehtmlextgen": false,
-  "postPath": "blogs",
-  "testArray": [
-    {
-      "name": "test.ejs"
-    },
-    {
-      "name": "test2.ejs"
-    }
-  ]
+  "postPath": "/posts"
 }
