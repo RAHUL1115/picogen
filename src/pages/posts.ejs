@@ -1,0 +1,11 @@
+---
+{
+  title:"list of posts"
+}
+---
+
+<div class="container mx-auto">
+  <% site.posts.forEach(element => { %>
+    <a href=" <%- page.srcfix+element.fullpath.substring(1) %>"><%- element.data.title %></a>
+  <% }) %>
+</div>
