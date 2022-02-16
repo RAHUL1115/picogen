@@ -1,27 +1,14 @@
 {
   "name": "picogen",
-  "version": "2.1.03",
-  "description": "Static site generator",
-  "main": "./lib/index.js",
-  "bin": {
-    "picogen": "./bin/index.js"
-  },
+  "version": "1.0.0",
+  "description": "picogen site",
+  "main": "tailwind.config.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "tailwindcss": "tailwindcss -i ./src/_static/css/input.css -o ./src/_static/css/tailwind.css"
-  },
-  "keywords": [
-    "picogen",
-    "static site generator",
-    "ejs"
-  ],
-  "author": "Rahul gupta",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RAHUL1115/picogen.git"
-  },
-  "bugs": {
-    "url": "https://github.com/RAHUL1115/picogen/issues"
-  },
-  "homepage": "https://github.com/RAHUL1115/picogen#readme"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },  
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

@@ -7,13 +7,5 @@
   "favicon": "dummy title",
   "removehtmlext": false,
   "removehtmlextgen": false,
-  "postPath": "blogs",
-  "testArray": [
-    {
-      "name": "test.ejs"
-    },
-    {
-      "name": "test2.ejs"
-    }
-  ]
+  "postPath": "blogs"
 }
