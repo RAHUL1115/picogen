@@ -57,3 +57,5 @@ $ picogen generate s
 ``` bash
 $ picogen clean
 ```
+
+more info [here](https://rahul1115.github.io/picogen/public/)
