@@ -5,7 +5,7 @@
   "copyright": "dummy title",
   "image": "dummy title",
   "favicon": "dummy title",
-  "removehtmlext": false,
+  "removehtmlext": true,
   "removehtmlextgen": false,
   "postPath": "blogs"
 }
