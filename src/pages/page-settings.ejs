@@ -15,13 +15,26 @@ layout : 'docslayout'
         <td class="p-2 px-4 font-bold capitalize">description</td>
         <td class="p-2 px-3 font-bold capitalize">type</td>
       </tr>
-      <% site.data.info.pageSetting.forEach(data => { %>
-        <tr>
-          <td class="p-2 px-3"><%- data.settings %></td>
-          <td class="p-2 px-4"><%- data.description %></td>
-          <td class="p-2 px-3"><%- data.type %></td>
-        </tr>
-      <% }); %>
+      <tr>
+        <td class="p-2 px-3">created</td>
+        <td class="p-2 px-4">When the file is created. (optional)</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">created</td>
+        <td class="p-2 px-4">When the file is modified. (optional)</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">layout</td>
+        <td class="p-2 px-4">page layout (optional)</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">renderInLayout</td>
+        <td class="p-2 px-4">It will render the page content after rendering the specific layout file.</td>
+        <td class="p-2 px-3">Bool</td>
+      </tr>
     </table>
   </section>
 </section>

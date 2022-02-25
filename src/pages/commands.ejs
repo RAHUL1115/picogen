@@ -24,16 +24,21 @@ layout : 'docslayout'
       </tr>
       <tr>
         <td class="px-3 py-2">-s</td>
-        <td class="px-3 py-2">to generate sitemap</td>
+        <td class="px-3 py-2">Create a sitemap.xml along with static files</td>
         <td class="px-3 py-2">Bool</td>
       </tr>
       <tr>
         <td class="px-3 py-2">-f</td>
-        <td class="px-3 py-2">to generate feed for blogs/articles</td>
+        <td class="px-3 py-2">Generate feed.xml for posts</td>
         <td class="px-3 py-2">Bool</td>
       </tr>
       <tr>
         <td class="px-3 py-2">-p</td>
+        <td class="px-3 py-2">to specify port.</td>
+        <td class="px-3 py-2">Number</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-P</td>
         <td class="px-3 py-2">to run in production mode.</td>
         <td class="px-3 py-2">Bool</td>
       </tr>
@@ -51,18 +56,8 @@ layout : 'docslayout'
         <td class="px-3 py-2 font-bold">type</td>
       </tr>
       <tr>
-        <td class="px-3 py-2">-P</td>
-        <td class="px-3 py-2">to specify port.</td>
-        <td class="px-3 py-2">Number</td>
-      </tr>
-      <tr>
         <td class="px-3 py-2">-n</td>
-        <td class="px-3 py-2">server with no auto reload.</td>
-        <td class="px-3 py-2">Bool</td>
-      </tr>
-      <tr>
-        <td class="px-3 py-2">-p</td>
-        <td class="px-3 py-2">to run in production mode.</td>
+        <td class="px-3 py-2">start server with no auto reload.</td>
         <td class="px-3 py-2">Bool</td>
       </tr>
       <tr>
@@ -70,7 +65,23 @@ layout : 'docslayout'
         <td class="px-3 py-2">to specify wait time for auto reload( in ms ).</td>
         <td class="px-3 py-2">Number</td>
       </tr>
+      <tr>
+        <td class="px-3 py-2">-p</td>
+        <td class="px-3 py-2">to specify port.</td>
+        <td class="px-3 py-2">Number</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-P</td>
+        <td class="px-3 py-2">to run in production mode.</td>
+        <td class="px-3 py-2">Bool</td>
+      </tr>
     </table>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Create</h2>
+    <p><code>$ picogen create &ltjson file&gt &ltoutput path&gt</json></code></p>
+    <p>create pages.</p>
   </section>
 
   <section class="space-y-5">

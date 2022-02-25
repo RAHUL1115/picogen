@@ -16,13 +16,51 @@ layout : 'docslayout'
         <td class="p-2 px-4 font-bold capitalize">description</td>
         <td class="p-2 px-3 font-bold capitalize">type</td>
       </tr>
-      <% site.data.info.configuration.forEach(data => { %>
       <tr>
-        <td class="p-2 px-3"><%- data.settings %></td>
-        <td class="p-2 px-4"><%- data.description %></td>
-        <td class="p-2 px-3"><%- data.type %></td>
+        <td class="p-2 px-3">websiteurl</td>
+        <td class="p-2 px-4">The domain of your website.</td>
+        <td class="p-2 px-3">String</td>
       </tr>
-      <% }); %>
+      <tr>
+        <td class="p-2 px-3">title</td>
+        <td class="p-2 px-4">feed title</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">description</td>
+        <td class="p-2 px-4">feed description</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">copyright</td>
+        <td class="p-2 px-4">feed copyright</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">image</td>
+        <td class="p-2 px-4">feed image</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">favicon</td>
+        <td class="p-2 px-4">feed favicon</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">removehtmlext</td>
+        <td class="p-2 px-4">Whether to remove the .html extension or not from server links.</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">removehtmlextgen</td>
+        <td class="p-2 px-4">Whether to remove the .html extension or not from generated files.</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
+      <tr>
+        <td class="p-2 px-3">blogs</td>
+        <td class="p-2 px-4">blog path</td>
+        <td class="p-2 px-3">String</td>
+      </tr>
     </table>
   </section>
 </section>
