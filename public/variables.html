@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+<title>picogen</title>
+<meta property="og:title" content="picogen" />
+
+
+
+
+
+
+
+
+
+<meta property="og:url" content="/variables" />
+<link rel="canonical" href="/variables" />
+<link rel="alternate" hreflang="x-default" href="/variables" />
+
+
+<meta property="og:locale" content="en_US" />
+
+
+
+
+
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/tailwind.css">
+  </head>
+
+  <body>
+    <header>
+  <div class="flex w-full container mx-auto justify-between">
+    <h1>Picogen</h1>
+    <nav class="flex space-x-5">
+      <a href="./">home</a>
+      <a href="./docs">docs</a>
+    </nav>
+  </div>
+</header>
+    <div class="flex container mx-auto space-x-5">
+  <div class="w-3/12">
+    <div>
+  <a class="block" href="./docs">docs</a>
+  <a class="block" href="./quick-start">quick-start</a>
+  <a class="block" href="./setup">setup</a>
+  <a class="block" href="./commands">commands</a>
+  <a class="block" href="./configuration">configuration</a>
+  <a class="block" href="./page-settings">page-settings</a>
+  <a class="block" href="./variables">variables</a>
+  <a class="block" href="./functions">functions</a>
+</div>
+  </div>
+  <div class="w-7/12">
+    <section class="space-y-8">
+  <h2 class="text-4xl">Variables</h2>
+
+  <section class="space-y-6">
+    <section class="space-y-4">
+      <p>Gloabl Variables</p>
+      <table class="border">
+        <tr>
+          <td class="p-2 px-3 font-bold capitalize">settings</td>
+          <td class="p-2 px-3 pl-5 font-bold capitalize">description</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">site</td>
+          <td class="p-2 px-3 pl-5">Sitewide information.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page</td>
+          <td class="p-2 px-3 pl-5">Page variable of particular page.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">_path</td>
+          <td class="p-2 px-3 pl-5">Path of the project directory. </td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">_production</td>
+          <td class="p-2 px-3 pl-5">Whether running in production or not.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="space-y-4">
+      <p>Site Variables</p>
+      <table class="border">
+        <tr>
+          <td class="p-2 px-3 font-bold">settings</td>
+          <td class="p-2 px-3 pl-5 font-bold">description</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">site.pages</td>
+          <td class="p-2 px-3 pl-5">json Array of page variables for each page.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">site.posts</td>
+          <td class="p-2 px-3 pl-5">json Array of page variables for each post.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">site.data</td>
+          <td class="p-2 px-3 pl-5">Json data from all the json files in the “src/_data” folder.
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="space-y-4">
+      <p>Page Variables</p>
+      <table class="border">
+        <tr>
+          <td class="p-2 px-3 font-bold">settings</td>
+          <td class="p-2 px-3 pl-5 font-bold">description</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.data</td>
+          <td class="p-2 px-3 pl-5">Page specific custom variables set in gray-matter.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.srcfix</td>
+          <td class="p-2 px-3 pl-5">Add this in each and every of the src and href attributes of all component files.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.name</td>
+          <td class="p-2 px-3 pl-5">Name of page file.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.path</td>
+          <td class="p-2 px-3 pl-5">Path of file with respect to pages folder.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.fullpath</td>
+          <td class="p-2 px-3 pl-5">Full path of file with respect to pages folder.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.actualpath</td>
+          <td class="p-2 px-3 pl-5">Full path of file with respect to pages folder and remove html settings.</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.created</td>
+          <td class="p-2 px-3 pl-5">When the page is created, this value can be modified with a gray-matter page specific variable "created".</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.modified</td>
+          <td class="p-2 px-3 pl-5">When the page is modified, this value can be modified with a gray-matter page specific variable "modified".</td>
+        </tr>
+        <tr>
+          <td class="p-2 px-3">page.content</td>
+          <td class="p-2 px-3 pl-5">Parsed content of the page.</td>
+        </tr>
+      </table>
+    </section>
+  </section>
+</section>
+  </div>
+</div>
+    <footer class="container mx-auto">
+  <p>&copy; copyright 2022 picogen</p>
+</footer>
+  </body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+<title>picogen</title>
+<meta property="og:title" content="picogen" />
+
+
+
+
+
+
+
+
+
+<meta property="og:url" content="/commands" />
+<link rel="canonical" href="/commands" />
+<link rel="alternate" hreflang="x-default" href="/commands" />
+
+
+<meta property="og:locale" content="en_US" />
+
+
+
+
+
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/tailwind.css">
+  </head>
+
+  <body>
+    <header>
+  <div class="flex w-full container mx-auto justify-between">
+    <h1>Picogen</h1>
+    <nav class="flex space-x-5">
+      <a href="./">home</a>
+      <a href="./docs">docs</a>
+    </nav>
+  </div>
+</header>
+    <div class="flex container mx-auto space-x-5">
+  <div class="w-3/12">
+    <div>
+  <a class="block" href="./docs">docs</a>
+  <a class="block" href="./quick-start">quick-start</a>
+  <a class="block" href="./setup">setup</a>
+  <a class="block" href="./commands">commands</a>
+  <a class="block" href="./configuration">configuration</a>
+  <a class="block" href="./page-settings">page-settings</a>
+  <a class="block" href="./variables">variables</a>
+  <a class="block" href="./functions">functions</a>
+</div>
+  </div>
+  <div class="w-7/12">
+    <section class="space-y-8">
+  <h2 class="text-4xl">Commands</h2>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Initialization</h2>
+    <p><code>$ picogen init</code></p>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Generate</h2>
+    <p><code>$ picogen generate</code></p>
+    <p>Generates static files.</p>
+    <table class="border">
+      <tr>
+        <td class="px-3 py-2 font-bold">Arguments</td>
+        <td class="px-3 py-2 font-bold">Descriptoin</td>
+        <td class="px-3 py-2 font-bold">type</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-s</td>
+        <td class="px-3 py-2">Create a sitemap.xml along with static files</td>
+        <td class="px-3 py-2">Bool</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-f</td>
+        <td class="px-3 py-2">Generate feed.xml for posts</td>
+        <td class="px-3 py-2">Bool</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-p</td>
+        <td class="px-3 py-2">to specify port.</td>
+        <td class="px-3 py-2">Number</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-P</td>
+        <td class="px-3 py-2">to run in production mode.</td>
+        <td class="px-3 py-2">Bool</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Server</h2>
+    <p><code>$ picogen server</code></p>
+    <p>Starts the server.</p>
+    <table class="border">
+      <tr>
+        <td class="px-3 py-2 font-bold">Arguments</td>
+        <td class="px-3 py-2 font-bold">Descriptoin</td>
+        <td class="px-3 py-2 font-bold">type</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-n</td>
+        <td class="px-3 py-2">start server with no auto reload.</td>
+        <td class="px-3 py-2">Bool</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-i</td>
+        <td class="px-3 py-2">to specify wait time for auto reload( in ms ).</td>
+        <td class="px-3 py-2">Number</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-p</td>
+        <td class="px-3 py-2">to specify port.</td>
+        <td class="px-3 py-2">Number</td>
+      </tr>
+      <tr>
+        <td class="px-3 py-2">-P</td>
+        <td class="px-3 py-2">to run in production mode.</td>
+        <td class="px-3 py-2">Bool</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Create</h2>
+    <p><code>$ picogen create &ltjson file&gt &ltoutput path&gt</json></code></p>
+    <p>create pages.</p>
+  </section>
+
+  <section class="space-y-5">
+    <h2 class="text-xl">Clean</h2>
+    <p><code>$ picogen clean</code></p>
+    <p>Cleans the cache file (db.json) and generated files (public).</p>
+  </section>
+</section>
+  </div>
+</div>
+    <footer class="container mx-auto">
+  <p>&copy; copyright 2022 picogen</p>
+</footer>
+  </body>
+
+</html>
