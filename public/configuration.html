@@ -36,28 +36,31 @@
   </head>
 
   <body class="flex flex-col min-h-screen overflow-y-scroll">
-    <header class="py-2 bg-gray-300">
+    <header class="py-2 px-4 md:px-8 bg-neutral-900 text-white">
   <div class="flex w-full container mx-auto justify-between">
-    <h1 class="text-2xl">PICOGEN</h1>
-    <nav class="flex space-x-8">
+    <a href="./" class="text-2xl">PICOGEN</a>
+    <nav class="hidden md:flex md:space-x-8">
       <a href="./">Home</a>
       <a href="./docs">Docs</a>
     </nav>
+    <span class="md:hidden">
+      nav
+    </span>
   </div>
 </header>
     <div class="flex container mx-auto space-x-5 flex-1 py-2">
-  <div class="w-1/4">
+  <div class="md:w-1/4 hidden md:block">
     <div>
-  <a class="block py-2 px-3 bg-neutral-100 hover:bg-neutral-200" href="./quick-start">quick-start</a>
-  <a class="block py-2 px-3 bg-neutral-100 hover:bg-neutral-200" href="./setup">setup</a>
-  <a class="block py-2 px-3 bg-neutral-100 hover:bg-neutral-200" href="./commands">commands</a>
-  <a class="block py-2 px-3 bg-neutral-100 hover:bg-neutral-200" href="./configuration">configuration</a>
-  <a class="block py-2 px-3 bg-neutral-100 hover:bg-neutral-200" href="./page-settings">page-settings</a>
-  <a class="block py-2 px-3 bg-neutral-100 hover:bg-neutral-200" href="./variables">variables</a>
-  <a class="block py-2 px-3 bg-neutral-100 hover:bg-neutral-200" href="./functions">functions</a>
+  <a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white" href="./quick-start">Quick-Start</a>
+  <a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white" href="./setup">Setup</a>
+  <a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white" href="./commands">Commands</a>
+  <a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white" href="./configuration">Configuration</a>
+  <a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white" href="./page-settings">Page-Settings</a>
+  <a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white" href="./variables">Variables</a>
+  <a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white" href="./functions">Functions</a>
 </div>
   </div>
-  <div class="w-3/4">
+  <div class="w-full md:w-3/4">
     <section class="space-y-8">
   <h2 class="text-4xl">Configuration</h2>
 
@@ -120,7 +123,7 @@
 </section>
   </div>
 </div>
-    <footer class="bg-gray-300">
+    <footer class="bg-neutral-900 px-4 md:px-8 text-white py-2">
   <div class="container mx-auto">
     <p>&copy; copyright 2022 picogen</p>
   </div>
