@@ -491,16 +491,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: list-item;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-full {
   width: 100%;
 }
 
-.w-3\/12 {
+.w-1\/4 {
   width: 25%;
 }
 
-.w-7\/12 {
-  width: 58.333333%;
+.w-3\/4 {
+  width: 75%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .list-inside {
@@ -509,6 +517,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .list-disc {
   list-style-type: disc;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .justify-between {
@@ -539,14 +551,34 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .border {
   border-width: 1px;
+}
+
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.bg-neutral-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -593,4 +625,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.hover\:bg-neutral-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
