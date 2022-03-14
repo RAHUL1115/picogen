@@ -6,8 +6,8 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "install": "npm i -g tailwindcss gulp gulp-concat gulp-clean-css gulp-uglify",
-    "link": "npm link gulp gulp-concat gulp-clean-css gulp-uglify",
+    "install": "npm i -g tailwindcss gulp gulp-concat gulp-csso gulp-uglify",
+    "link": "npm link gulp gulp-concat gulp-csso gulp-uglify",
     "tailwindcss": "tailwindcss -i ./src/_static/css/input.css -o ./src/_static/css/tailwind.css",
     "push": "git add . && git commit -m 'changes' && git push",
     "update": "picogen clean && npm run tailwindcss && picogen generate -s -f -p && npm run push"
