@@ -7,5 +7,5 @@
   "favicon": "favicon.ico",
   "removehtmlext": false,
   "removehtmlextgen": false,
-  "postPath": "/posts"
+  "postPath": "/post"
 }
