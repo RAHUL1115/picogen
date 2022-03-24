@@ -9,7 +9,7 @@
     "install": "npm i -g tailwindcss gulp gulp-concat gulp-csso gulp-uglify",
     "link": "npm link gulp gulp-concat gulp-csso gulp-uglify",
     "tailwindcss": "tailwindcss -i ./src/_static/css/input.css -o ./src/_static/css/tailwind.css",
-    "push": "git add . && git commit -m 'changes' && git push",
+    "push" : "node -e \"const mssg = 'BUILD - ' + process.argv[1]; require('child_process').execSync('git add . && git commit -m \\\"' + mssg + '\\\" && git push', { stdio:[0, 1, 2] })\"",
     "update": "picogen clean && npm run tailwindcss && picogen generate -s -f -p && npm run push"
   },
   "keywords": [],
