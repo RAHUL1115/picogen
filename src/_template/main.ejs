@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="<%- page.srcfix %>css/tailwind.css">
   </head>
 
-  <body class="flex flex-col min-h-screen overflow-y-scroll">
+  <body x-data="{'open' : false}" class="flex flex-col min-h-screen overflow-y-scroll">
     <%- include("navbar") %>
     <%- body %>
     <%- include("footer") %>
+    <script src="<%- page.scrfix %>js/alpine.js"></script>
+    <script src="<%- page.scrfix %>js/main.js"></script>
   </body>
 
 </html>
