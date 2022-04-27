@@ -1,5 +1,7 @@
 {
   "websiteurl": "https://examle.com",
+  "devurl": "http://localhost:4000",
+  "imgOptimizer": "//images.weserv.nl/?url=",
   "title": "dummy title",
   "description": "dummy description",
   "copyright": "dummy copyright",
