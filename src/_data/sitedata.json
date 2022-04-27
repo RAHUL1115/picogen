@@ -1,5 +1,7 @@
 {
   "websiteurl": "https://examle.com",
+  "devurl": "localhost:4000",
+  "imgOptimizer": null,
   "title": "dummy title",
   "description": "dummy title",
   "copyright": "dummy title",
