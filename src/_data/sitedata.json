@@ -1,13 +1,13 @@
 {
-  "websiteurl": "https://examle.com",
-  "devurl": "http://localhost:4000",
+  "websiteURL": "https://examle.com",
+  "devURL": "http://localhost:4000",
   "imgOptimizer": "//images.weserv.nl/?url=",
   "title": "dummy title",
   "description": "dummy description",
   "copyright": "dummy copyright",
   "image": "image.jpg",
   "favicon": "favicon.ico",
-  "removehtmlext": false,
-  "removehtmlextgen": false,
+  "removeHTMLExt": false,
+  "removeHTMLExtGen": false,
   "postPath": "/post"
 }
