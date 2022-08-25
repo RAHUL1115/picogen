@@ -1,0 +1,47 @@
+# URl of the website
+websiteURL: https://example.com
+
+# Development URL <Experimental Feature>
+devURL:
+
+# Image Optimizer <Experimental Feature>
+imgOptimizer:
+
+# Remove html extension from picogen server
+removeHTMLExt: true
+
+# Remove html extension form generated files
+removeHTMLExtGen: true
+
+# post path where the generate post files should placed
+postPath: posts/
+
+# js file to bundle
+jsFiles: "{tailwind,main}"
+
+# css files to bundle
+cssFiles: "main"
+
+# weather to purge css files or not
+purgeCss: "**/{*.ejs,*.html,main.js}"
+
+#sitemap settings
+sitemap: true
+
+# Feed settings
+feed: true
+
+# title of the RSS feed
+title: "dummy title"
+
+# description of the RSS feed
+description: "dummy description"
+
+#copyright of the RSS feed
+copyright: "dummy copyright"
+
+# image of the RSS feed
+image: image.jpg
+
+# favicon of the RSS feed
+favicon: favicon.ico
