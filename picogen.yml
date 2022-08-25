@@ -14,10 +14,10 @@ removeHTMLExt: true
 postPath: post/
 
 # js file to bundle
-jsFiles: "{tailwind,main}"
+cssFiles: "{tailwind,main}"
 
 # css files to bundle
-cssFiles: "main"
+jsFiles: "main"
 
 # weather to purge css files or not
 purgeCss: "**/{*.ejs,*.html,main.js}"
