@@ -10,11 +10,8 @@ imgOptimizer:
 # Remove html extension from picogen server
 removeHTMLExt: true
 
-# Remove html extension form generated files
-removeHTMLExtGen: true
-
 # post path where the generate post files should placed
-postPath: posts/
+postPath: post/
 
 # js file to bundle
 jsFiles: "{tailwind,main}"
