@@ -27,7 +27,8 @@
     "path": "^0.12.7",
     "recursive-readdir-async": "^1.1.8",
     "serve-static": "^1.14.1",
-    "simple-json-db": "^1.2.3"
+    "simple-json-db": "^1.2.3",
+    "sitemap-generator": "^8.5.1"
   },
   "keywords": [
     "picogen",
