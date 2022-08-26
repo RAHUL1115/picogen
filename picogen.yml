@@ -1,12 +1,6 @@
 # URl of the website
 websiteURL: https://example.com
 
-# Development URL <Experimental Feature>
-devURL:
-
-# Image Optimizer <Experimental Feature>
-imgOptimizer:
-
 # Remove html extension from picogen server
 removeHTMLExt: true
 
