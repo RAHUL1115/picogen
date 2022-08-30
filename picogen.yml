@@ -1,6 +1,12 @@
 # URl of the website
 websiteURL: https://example.com
 
+# website name
+websiteName: dummy name
+
+# website description
+websiteImage: https://example.com/img/img.png
+
 # Remove html extension from picogen server
 removeHTMLExt: true
 
@@ -15,6 +21,9 @@ jsFiles: "main"
 
 # weather to purge css files or not
 purgeCss: "**/{*.ejs,*.html,main.js}"
+
+# file you want to purge css from
+purgeCssFiles: "main"
 
 #sitemap settings
 sitemap: true
