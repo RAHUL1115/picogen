@@ -1,11 +1,11 @@
 <header class="py-2 px-4 md:px-8 bg-neutral-900 text-white">
   <div class="flex w-full container mx-auto justify-between items-center">
-    <a href="<%- page.srcfix %>">
-      <img src="<%- page.srcfix %>img/logo-white.png" class="h-10" alt="">
+    <a href="/">
+      <img src="/img/logo-white.png" class="h-10" alt="">
     </a>
     <nav class="hidden md:flex md:space-x-8">
-      <a href="<%- page.srcfix %>">Home</a>
-      <a href="<%- page.srcfix %>docs">Docs</a>
+      <a href="/">Home</a>
+      <a href="/docs">Docs</a>
     </nav>
     <span x-on:click="open = !open" :class="open ? 'z-[100] text-black' : ' text-white'" class="md:hidden fill-current">
       <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6">
@@ -18,6 +18,6 @@
 <!-- offcanvas menu -->
 <div :class="open ? '-translate-x-0' : '-translate-x-full'"
   class="fixed w-screen h-screen z-20 left-0 top-0 bg-white transition-all duration-300 delay-100 ease-[cubic-bezier(0.55,0,1,0.45)] flex flex-col justify-center items-center space-y-5">
-  <a href="<%- page.srcfix %>" class="text-xl">Home</a>
-  <a href="<%- page.srcfix %>docs" class="text-xl">Docs</a>
+  <a href="/" class="text-xl">Home</a>
+  <a href="/docs" class="text-xl">Docs</a>
 </div>

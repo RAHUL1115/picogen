@@ -1,5 +1,3 @@
-<% let thispagelink = page.actualpath.replace('index.html','') %>
-
 <% if (page.data?.title) { %>
 <title><%- page.data.title %></title>
 <meta property="og:title" content="<%- page.data.title %>" />
@@ -14,33 +12,33 @@
 <meta name="keywords" content="<%- page.data.keywords %>">
 <% } %>
 
-<% if(site.data?.sitedata?.sitename) { %>
-<meta property="og:site_name" content="<%- site.data.sitedata.sitename %>" />
+<% if(config.siteName) { %>
+<meta property="og:site_name" content="<%- config.siteName %>" />
 <% } %>
 
-<% if(thispagelink) { %>
-<meta property="og:url" content="<%- thispagelink %>" />
-<link rel="canonical" href="<%- thispagelink %>" />
-<link rel="alternate" hreflang="x-default" href="<%- thispagelink %>" />
+<% if(page.URL) { %>
+<meta property="og:url" content="<%- page.URL %>" />
+<link rel="canonical" href="<%- page.URL %>" />
+<link rel="alternate" hreflang="x-default" href="<%- page.URL %>" />
 <% } %>
 
 <meta property="og:locale" content="en_US" />
 
-<% if(page.data?.image || site.data?.sitedata?.siteimage) { %>
-<% if(page.path == '/') { %>
-<meta property="og:image" content="<%- page.data.image ?  page.srcfix+page.data.image : site.data.sitedata.siteimage %>" />
-<% } else if (page.data?.image) { %>
-<meta property="og:image" content="<%- page.srcfix+page.data.image %>" />
-<% } %>
+<% if(page.data?.image || config.siteImage) { %>
+  <% if(page.path == '/') { %>
+    <meta property="og:image" content="<%- page.data.image ?  page.srcfix+page.data.image : config.siteImage %>" />
+  <% } else if (page.data?.image) { %>
+    <meta property="og:image" content="<%- page.srcfix + page.data.image %>" />
+  <% } %>
 <% } %>
 
 <% if(page.data?.schema) { %>
 <script type="application/ld+json">
-  < % -JSON.stringify(page.data.schema) % >
+  <%- JSON.stringify(page.data.schema) %>
 </script>
 <% } %>
 
-<% try { if(tagid) {%>
+<% try { if(tagId) {%>
 <!-- Google Tag Manager -->
 <script>
   (function (w, d, s, l, i) {
@@ -56,7 +54,7 @@
     j.src =
       'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
     f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', '<%- tagid %>');
+  })(window, document, 'script', 'dataLayer', '<%- tagId %>');
 </script>
 <!-- End Google Tag Manager -->
 <% }} catch(e){}%>

@@ -1,0 +1,47 @@
+# URl of the website
+websiteURL: https://example.com
+
+# website name
+websiteName: dummy name
+
+# website description
+websiteImage: https://example.com/img/img.png
+
+# Remove html extension from picogen server
+removeHTMLExt: true
+
+# post path where the generate post files should placed
+postPath: post/
+
+# js file to bundle
+cssFiles: ["fontawsome","splide","sal","odometer","tailwind","main"]
+
+# css files to bundle
+jsFiles: ["alpine","splide","sal","odometer","main"]
+
+# weather to purge css files or not
+purgeCss: "**/{*.ejs,*.html,main.js}"
+
+# file you want to purge css from
+purgeCssFiles: ["fontawsome"]
+
+#sitemap settings
+sitemap: false
+
+# Feed settings
+feed: true
+
+# title of the RSS feed
+title: "dummy title"
+
+# description of the RSS feed
+description: "dummy description"
+
+#copyright of the RSS feed
+copyright: "dummy copyright"
+
+# image of the RSS feed
+image: image.jpg
+
+# favicon of the RSS feed
+favicon: favicon.ico
