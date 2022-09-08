@@ -2,9 +2,9 @@
 <rss version="2.0">
     <channel>
         <title>dummy title</title>
-        <link>https://example.com</link>
+        <link>https://rahul1115.github.io/picogen/public</link>
         <description>dummy description</description>
-        <lastBuildDate>Thu, 08 Sep 2022 08:58:10 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Sep 2022 09:02:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>dummy copyright</copyright>

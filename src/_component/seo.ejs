@@ -17,18 +17,18 @@
 <% } %>
 
 <% if(page.URL) { %>
-<meta property="og:url" content="<%- page.URL %>" />
-<link rel="canonical" href="<%- page.URL %>" />
-<link rel="alternate" hreflang="x-default" href="<%- page.URL %>" />
+<meta property="og:url" content="<%- config.websiteURL+page.URL %>" />
+<link rel="canonical" href="<%- config.websiteURL+page.URL %>" />
+<link rel="alternate" hreflang="x-default" href="<%- config.websiteURL+page.URL %>" />
 <% } %>
 
 <meta property="og:locale" content="en_US" />
 
 <% if(page.data?.image || config.siteImage) { %>
   <% if(page.path == '/') { %>
-    <meta property="og:image" content="<%- page.data.image ?  page.srcfix+page.data.image : config.siteImage %>" />
+    <meta property="og:image" content="<%- page.data.image ?  config.websiteURL + page.data.image : config.siteImage %>" />
   <% } else if (page.data?.image) { %>
-    <meta property="og:image" content="<%- page.srcfix + page.data.image %>" />
+    <meta property="og:image" content="<%- config.websiteURL + page.data.image %>" />
   <% } %>
 <% } %>
 
@@ -57,4 +57,4 @@
   })(window, document, 'script', 'dataLayer', '<%- tagId %>');
 </script>
 <!-- End Google Tag Manager -->
-<% }} catch(e){}%>
+<% }} catch(e){} %>
