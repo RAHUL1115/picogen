@@ -58,4 +58,4 @@ $ picogen generate s
 $ picogen clean
 ```
 
-more info [here](https://rahul1115.github.io/picogen/public/)
+more info [here](https://picogen.pages.dev)
