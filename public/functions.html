@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>picogen</title>
+<meta property=og:title content=picogen>
+<meta property=og:url content=/functions>
+<link rel=canonical href=/functions>
+<link rel=alternate hreflang=x-default href=/functions>
+<meta property=og:locale content=en_US>
+<link rel=stylesheet href=/css/main.css>
+<link rel=stylesheet href=/css/tailwind.css>
+</head>
+<body x-data="{'open' : false}"class="flex flex-col min-h-screen overflow-y-scroll">
+<header class="py-2 px-4 md:px-8 bg-neutral-900 text-white">
+<div class="flex w-full container mx-auto justify-between items-center">
+<a href=/ >
+<img src=/img/logo-white.png class=h-10 alt="">
+</a>
+<nav class="hidden md:flex md:space-x-8">
+<a href=/ >Home</a>
+<a href=/docs>Docs</a>
+</nav>
+<span x-on:click="open = !open":class="open ? 'z-[100] text-black' : ' text-white'"class="md:hidden fill-current">
+<svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24"class=w-6>
+<path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"/>
+</svg>
+</span>
+</div>
+</header>
+<div :class="open ? '-translate-x-0' : '-translate-x-full'"class="fixed w-screen h-screen z-20 left-0 top-0 bg-white transition-all duration-300 delay-100 ease-[cubic-bezier(0.55,0,1,0.45)] flex flex-col justify-center items-center space-y-5">
+<a href=/ class=text-xl>Home</a>
+<a href=/docs class=text-xl>Docs</a>
+</div>
+<div class="flex container mx-auto space-x-5 flex-1 py-2">
+<div class="md:w-1/4 hidden md:block">
+<div>
+<a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white"href=/quick-start>Quick-Start</a>
+<a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white"href=/setup>Setup</a>
+<a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white"href=/commands>Commands</a>
+<a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white"href=/configuration>Configuration</a>
+<a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white"href=/page-settings>Page-Settings</a>
+<a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white"href=/variables>Variables</a>
+<a class="block py-2 px-3 border-b hover:bg-neutral-900 hover:text-white"href=/functions>Functions</a>
+</div>
+</div>
+<div class="w-full md:w-3/4">
+<section class=space-y-8>
+<h2 class=text-4xl>Functions</h2>
+<section class=space-y-5>
+<p>you can modify settings in ./src/_data/sitedata.json</p>
+<table class=border>
+<tr>
+<td class="p-2 px-3 font-bold capitalize">functions</td>
+<td class="p-2 px-3 pl-5 font-bold capitalize">description</td>
+</tr>
+<tr>
+<td class="p-2 px-3">getNchar(str,n,max)</td>
+<td class="p-2 px-3 pl-5">Returns the first n char of string.</td>
+</tr>
+<tr>
+<td class="p-2 px-3">removeHtmlTags(str)</td>
+<td class="p-2 px-3 pl-5">Returns the given text with removed html tags.</td>
+</tr>
+</table>
+</section>
+</section>
+</div>
+</div>
+<footer class="bg-neutral-900 px-4 md:px-8 text-white py-2">
+<div class="container mx-auto">
+<p>&copy; copyright 2022 picogen</p>
+</div>
+</footer>
+<script src=js/alpine.js></script>
+<script src=js/main.js></script>
+</body>
+</html>
