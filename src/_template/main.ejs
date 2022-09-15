@@ -2,12 +2,9 @@
 <html lang="en">
 
   <head>
-    
-
     <%- include('seo') %>
-    
-    <link rel="stylesheet" href="<%- page.srcfix %>css/tailwind.css">
-    <link rel="stylesheet" href="<%- page.srcfix %>css/main.css">
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/main.css">
   </head>
 
   <body>
@@ -16,11 +13,9 @@
     <%- include("footer") %>
 
     <% if(_production){ %>
-    <!-- for production mode -->
-    <script src="<%- page.srcfix %>js/main.js"></script>
+    <script src="/js/main.js"></script>
     <% }else{ %>
-    <!-- for development mode -->
-    <script src="<%- page.srcfix %>js/main.js"></script>
+    <script src="/js/main.js"></script>
     <% } %>
   </body>
 
