@@ -5,7 +5,7 @@ websiteURL: https://example.com
 websiteName: dummy name
 
 # website description
-websiteImage: https://example.com/img/img.png
+websiteImage: /img/img.png
 
 # Remove html extension from picogen server
 removeHTMLExt: true
