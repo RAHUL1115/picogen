@@ -41,7 +41,7 @@ description: "dummy description"
 copyright: "dummy copyright"
 
 # image of the RSS feed
-image: image.jpg
+image: /image.jpg
 
 # favicon of the RSS feed
 favicon: favicon.ico
