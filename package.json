@@ -1,6 +1,6 @@
 {
   "name": "picogen",
-  "version": "3.0.24",
+  "version": "4.0.0",
   "description": "Static site generator",
   "main": "./lib/index.js",
   "bin": {
