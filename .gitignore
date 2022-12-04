@@ -76,7 +76,5 @@ typings/
 .fusebox/
 
 # custom
-source/
 public/
-template/
 db.json
